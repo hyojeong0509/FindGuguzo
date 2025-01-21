@@ -38,8 +38,13 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void Change_Level()
+    {
+        isHard = !isHard;
+    }
+
     // firstCard와 secondCard 정보(idx) 비교하기
-    public void MatchCard()
+    public void MatchCards()
     {
         // idx 동일하면,
         if (firstCard.idx == secondCard.idx)
@@ -65,8 +70,15 @@ public class GameManager : MonoBehaviour
         }
 
         // idx 동일하지 않을 때,
-        // 카드 닫기
+        else
+        {
+            // 카드 닫기
+            firstCard.CloseCard();
+            secondCard.CloseCard();
+        }
 
         // 변수 초기화
+        firstCard = null;
+        secondCard = null;
     }
 }

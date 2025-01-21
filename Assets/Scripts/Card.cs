@@ -48,7 +48,7 @@ public class Card : MonoBehaviour
             // secondCard에 정보 할당하기
             GameManager.Instance.secondCard = this;
             // first - second의 정보(idx) 비교하기
-            GameManager.Instance.MatchCard();
+            GameManager.Instance.MatchCards();
         }
     }
 
@@ -67,7 +67,7 @@ public class Card : MonoBehaviour
     // 카드 greyscale 변환하기
     public void GreyCard()
     {
-
+        Invoke("GreyCardRaw", 1.0f);
     }
     
     void GreyCardRaw()
