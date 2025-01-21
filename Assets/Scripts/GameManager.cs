@@ -30,4 +30,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void Change_Level()
+    {
+        isHard = !isHard;
+    }
 }
