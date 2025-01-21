@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public Card firstCard;
+    public Card secondCard;
+
+    public int leftCards = 0;
+
     public bool isHard = false;
+    public bool isHardPossible = false;
 
     private void Awake()
     {
@@ -29,5 +36,37 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    // firstCard와 secondCard 정보(idx) 비교하기
+    public void MatchCard()
+    {
+        // idx 동일하면,
+        if (firstCard.idx == secondCard.idx)
+        {
+            // 카드 greyscale 전환
+            // leftCards 감소
+            leftCards -= 2;
+
+            // leftCards == 0일 때,
+            if (leftCards <= 0)
+            {
+                // 게임종료
+                Time.timeScale = 0.0f;
+                // EndScene 전환
+                SceneManager.LoadScene("EndScene");
+                // 이지모드 클리어 시, 하드모드 해금
+                if (isHard == false && isHardPossible == false)
+                {
+                    // isHardPossible 값 전환
+                    isHardPossible = true;
+                }
+            }
+        }
+
+        // idx 동일하지 않을 때,
+        // 카드 닫기
+
+        // 변수 초기화
     }
 }
