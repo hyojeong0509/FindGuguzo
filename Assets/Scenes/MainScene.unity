@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardCount: 0
-  isHard: 1
+  isHard: 0
   isHardPossible: 0
 --- !u!4 &185173392
 Transform:
