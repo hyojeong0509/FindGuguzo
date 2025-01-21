@@ -30,11 +30,15 @@ public class StartSceneManager : MonoBehaviour
 
     void Init()
     {
-        ///
         // objDifficultyLevel 이지 난이도 클리어 여부에 따라 ON / OFF 시키기
-        objDifficultyLevel.SetActive(false);
-        objDifficultyLevel.SetActive(true);
-        ///
+        if (GameManager.Instance.isHardPossible)
+        {
+            objDifficultyLevel.SetActive(true);
+        }
+        else
+        {
+            objDifficultyLevel.SetActive(false);
+        }
 
         FisherYatesShuffleUnity(SpawnPointsCloud);
         FisherYatesShuffleUnity(PrefabsCloud);

@@ -661,7 +661,7 @@ MonoBehaviour:
   - {fileID: 2192924434411231744, guid: 09a2801a05ea9c043848fe5f64bde4d0, type: 3}
   - {fileID: 3967121535864737269, guid: 01fce6f23ea221c4e99b5bd993f6bbfd, type: 3}
   - {fileID: 433065474570762189, guid: 3b7c1c84d14a7e54892c06b83a6f3b0b, type: 3}
-  objDifficultyLevel: {fileID: 0}
+  objDifficultyLevel: {fileID: 1122629910}
   TextDifficultyLevel:
   - {fileID: 266314054}
   - {fileID: 1428202344}
@@ -1252,6 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHard: 0
+  isHardPossible: 0
 --- !u!4 &935467487
 Transform:
   m_ObjectHideFlags: 0

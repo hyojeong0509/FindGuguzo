@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public bool isHard = false;
+    public bool isHardPossible = false;
 
     private void Awake()
     {
