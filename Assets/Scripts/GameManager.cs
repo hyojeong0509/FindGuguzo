@@ -8,28 +8,26 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    float time = 30.0f;
-
-    public int leftCards = 0;
-
     public bool isHard = false;
     public bool isHardPossible = false;
 
     public Card firstCard = null;
     public Card secondCard = null;
 
-    public Text timeText;
+    public Text timeTxt;
 
+    float time = 30f;
+    
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À º¯°æ ½Ã »èÁ¦µÇÁö ¾Êµµ·Ï ¼³Á¤
+            DontDestroyOnLoad(gameObject); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
-            Destroy(gameObject); // Áßº¹µÈ GameManager Á¦°Å
+            Destroy(gameObject); // ï¿½ßºï¿½ï¿½ï¿½ GameManager ï¿½ï¿½ï¿½ï¿½
         }
     }
 
@@ -42,7 +40,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         time -= Time.deltaTime;
-        timeText.text = time.ToString("N2");
+        timeTxt.text = time.ToString("N2"); 
     }
 
     public void Change_Level()
@@ -50,44 +48,44 @@ public class GameManager : MonoBehaviour
         isHard = !isHard;
     }
 
-    // firstCard¿Í secondCard Á¤º¸(idx) ºñ±³ÇÏ±â
+    // firstCardï¿½ï¿½ secondCard ï¿½ï¿½ï¿½ï¿½(idx) ï¿½ï¿½ï¿½Ï±ï¿½
     public void MatchCards()
     {
-        // idx µ¿ÀÏÇÏ¸é,
+        // idx ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½,
         if (firstCard.idx == secondCard.idx)
         {
-            // Ä«µå greyscale ÀüÈ¯
+            // Ä«ï¿½ï¿½ greyscale ï¿½ï¿½È¯
             firstCard.GreyCard();
             secondCard.GreyCard();
 
-            // leftCards °¨¼Ò
+            // leftCards ï¿½ï¿½ï¿½ï¿½
             leftCards -= 2;
 
-            // leftCards == 0ÀÏ ¶§,
+            // leftCards == 0ï¿½ï¿½ ï¿½ï¿½,
             if (leftCards <= 0)
             {
-                // °ÔÀÓÁ¾·á
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 Time.timeScale = 0.0f;
-                // EndScene ÀüÈ¯
+                // EndScene ï¿½ï¿½È¯
                 SceneManager.LoadScene("EndScene");
-                // ÀÌÁö¸ðµå Å¬¸®¾î ½Ã, ÇÏµå¸ðµå ÇØ±Ý
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½Ïµï¿½ï¿½ï¿½ ï¿½Ø±ï¿½
                 if (isHard == false && isHardPossible == false)
                 {
-                    // isHardPossible °ª ÀüÈ¯
+                    // isHardPossible ï¿½ï¿½ ï¿½ï¿½È¯
                     isHardPossible = true;
                 }
             }
         }
 
-        // idx µ¿ÀÏÇÏÁö ¾ÊÀ» ¶§,
+        // idx ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½,
         else
         {
-            // Ä«µå ´Ý±â
+            // Ä«ï¿½ï¿½ ï¿½Ý±ï¿½
             firstCard.CloseCard();
             secondCard.CloseCard();
         }
 
-        // º¯¼ö ÃÊ±âÈ­
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         firstCard = null;
         secondCard = null;
     }
