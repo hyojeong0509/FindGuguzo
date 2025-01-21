@@ -12,6 +12,5 @@ public class ClickImage : MonoBehaviour
     {
         imgDisplay.sprite = clickImage.sprite;
         ImgPanel.SetActive(true);
-        Debug.Log("gg");
     }
 }
