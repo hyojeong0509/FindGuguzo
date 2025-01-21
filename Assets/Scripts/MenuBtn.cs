@@ -7,6 +7,6 @@ public class MenuBtn : MonoBehaviour
 {
     public void MenuButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("StartScene");
     }
 }

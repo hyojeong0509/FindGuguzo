@@ -229,8 +229,8 @@ GameObject:
   - component: {fileID: 92096754}
   - component: {fileID: 92096756}
   - component: {fileID: 92096755}
-  - component: {fileID: 92096758}
   - component: {fileID: 92096757}
+  - component: {fileID: 92096758}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -340,7 +340,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 92096758}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -360,12 +360,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 92096753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &127773645
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,8 +376,8 @@ GameObject:
   - component: {fileID: 127773646}
   - component: {fileID: 127773648}
   - component: {fileID: 127773647}
-  - component: {fileID: 127773650}
   - component: {fileID: 127773649}
+  - component: {fileID: 127773650}
   m_Layer: 5
   m_Name: Image2
   m_TagString: Untagged
@@ -488,7 +487,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 127773650}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -508,12 +507,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 127773645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &130151875
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,8 +523,8 @@ GameObject:
   - component: {fileID: 130151876}
   - component: {fileID: 130151878}
   - component: {fileID: 130151877}
-  - component: {fileID: 130151880}
   - component: {fileID: 130151879}
+  - component: {fileID: 130151880}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -636,7 +634,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 130151880}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -656,12 +654,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 130151875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &191428636
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,8 +670,8 @@ GameObject:
   - component: {fileID: 191428637}
   - component: {fileID: 191428639}
   - component: {fileID: 191428638}
-  - component: {fileID: 191428641}
   - component: {fileID: 191428640}
+  - component: {fileID: 191428641}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -784,7 +781,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 191428641}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -804,12 +801,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 191428636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &215473138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &248335950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1213,7 +1209,7 @@ GameObject:
   - component: {fileID: 287446489}
   - component: {fileID: 287446488}
   - component: {fileID: 287446491}
-  - component: {fileID: 287446490}
+  - component: {fileID: 287446492}
   m_Layer: 5
   m_Name: Image2
   m_TagString: Untagged
@@ -1278,21 +1274,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287446486}
   m_CullTransparentMesh: 1
---- !u!114 &287446490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287446486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
-  ImgPanel: {fileID: 1233717048}
 --- !u!114 &287446491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,8 +1318,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 287446490}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+      - m_Target: {fileID: 287446492}
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -1349,6 +1330,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &287446492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287446486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &398030856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,7 +1726,7 @@ GameObject:
   - component: {fileID: 686580022}
   - component: {fileID: 686580021}
   - component: {fileID: 686580024}
-  - component: {fileID: 686580023}
+  - component: {fileID: 686580025}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1796,21 +1791,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686580019}
   m_CullTransparentMesh: 1
---- !u!114 &686580023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686580019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
-  ImgPanel: {fileID: 1233717048}
 --- !u!114 &686580024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,8 +1835,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 686580023}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+      - m_Target: {fileID: 686580025}
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -1867,6 +1847,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &686580025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686580019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &708617272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,7 +2361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &812929518
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2640,8 +2634,8 @@ GameObject:
   - component: {fileID: 879207468}
   - component: {fileID: 879207470}
   - component: {fileID: 879207469}
-  - component: {fileID: 879207472}
   - component: {fileID: 879207471}
+  - component: {fileID: 879207472}
   m_Layer: 5
   m_Name: Image2
   m_TagString: Untagged
@@ -2751,7 +2745,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 879207472}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -2771,12 +2765,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 879207467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &899539983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,8 +3240,8 @@ GameObject:
   - component: {fileID: 1082100738}
   - component: {fileID: 1082100740}
   - component: {fileID: 1082100739}
-  - component: {fileID: 1082100742}
   - component: {fileID: 1082100741}
+  - component: {fileID: 1082100742}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3358,7 +3351,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1082100742}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -3378,12 +3371,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1082100737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &1233717048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,7 +3465,7 @@ GameObject:
   - component: {fileID: 1286842359}
   - component: {fileID: 1286842358}
   - component: {fileID: 1286842361}
-  - component: {fileID: 1286842360}
+  - component: {fileID: 1286842362}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3538,21 +3530,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286842356}
   m_CullTransparentMesh: 1
---- !u!114 &1286842360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286842356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
-  ImgPanel: {fileID: 1233717048}
 --- !u!114 &1286842361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3597,8 +3574,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1286842360}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+      - m_Target: {fileID: 1286842362}
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -3609,6 +3586,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1286842362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286842356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &1290499401
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,8 +3611,8 @@ GameObject:
   - component: {fileID: 1290499402}
   - component: {fileID: 1290499404}
   - component: {fileID: 1290499403}
-  - component: {fileID: 1290499406}
   - component: {fileID: 1290499405}
+  - component: {fileID: 1290499406}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3731,7 +3722,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1290499406}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -3751,12 +3742,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1290499401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &1303992287
 GameObject:
   m_ObjectHideFlags: 0
@@ -4147,7 +4137,7 @@ GameObject:
   - component: {fileID: 1627078255}
   - component: {fileID: 1627078254}
   - component: {fileID: 1627078257}
-  - component: {fileID: 1627078256}
+  - component: {fileID: 1627078258}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -4212,21 +4202,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627078252}
   m_CullTransparentMesh: 1
---- !u!114 &1627078256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627078252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
-  ImgPanel: {fileID: 1233717048}
 --- !u!114 &1627078257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4271,8 +4246,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1627078256}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+      - m_Target: {fileID: 1627078258}
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -4283,6 +4258,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1627078258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627078252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &1690112832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,7 +4442,7 @@ GameObject:
   - component: {fileID: 1732121739}
   - component: {fileID: 1732121738}
   - component: {fileID: 1732121741}
-  - component: {fileID: 1732121740}
+  - component: {fileID: 1732121742}
   m_Layer: 5
   m_Name: Image2
   m_TagString: Untagged
@@ -4518,21 +4507,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732121736}
   m_CullTransparentMesh: 1
---- !u!114 &1732121740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732121736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
-  ImgPanel: {fileID: 1233717048}
 --- !u!114 &1732121741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4577,8 +4551,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1732121740}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+      - m_Target: {fileID: 1732121742}
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -4589,6 +4563,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1732121742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732121736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &1756418243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,8 +4667,8 @@ GameObject:
   - component: {fileID: 1991370717}
   - component: {fileID: 1991370719}
   - component: {fileID: 1991370718}
-  - component: {fileID: 1991370721}
   - component: {fileID: 1991370720}
+  - component: {fileID: 1991370721}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -4790,7 +4778,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1991370721}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ClickImage, Assembly-CSharp
         m_MethodName: ViewImage
         m_Mode: 2
         m_Arguments:
@@ -4810,12 +4798,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1991370716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64971c7272a65394abba4a3ee57b8df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 70d6a8f5b653696498c5fe4be920fd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HardPanel: {fileID: 0}
-  EazyPanel: {fileID: 0}
   ImgPanel: {fileID: 1233717048}
+  imgDisplay: {fileID: 780617287}
 --- !u!1 &1999461895
 GameObject:
   m_ObjectHideFlags: 0
