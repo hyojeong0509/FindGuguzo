@@ -32,8 +32,10 @@ public class Board : MonoBehaviour
                     board.transform.position = new Vector2(x, y);
                     board.GetComponent<Card>().Setting(arr[i], backNumber);
                 }
-
             }
+
+            // leftCards 업데이트
+            GameManager.Instance.leftCards = arr.Length;
         }
         else
         {
@@ -52,6 +54,9 @@ public class Board : MonoBehaviour
                 board.GetComponent<Card>().Setting(arr[i], backNumber);
 
             }
+
+            // leftCards 업데이트
+            GameManager.Instance.leftCards = arr.Length;
         }
     }
 
