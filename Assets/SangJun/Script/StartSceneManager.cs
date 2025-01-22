@@ -23,6 +23,7 @@ public class StartSceneManager : MonoBehaviour
         Init();
     }
 
+
     private void OnDisable()
     {
         CancelInvoke();
