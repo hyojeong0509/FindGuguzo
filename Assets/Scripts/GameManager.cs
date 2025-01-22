@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (leftCards > 0 && timeTxt != null)
+        if (leftCards > 0 && timeTxt != null && time > 0f)
         {
             time -= Time.deltaTime;
             timeTxt.text = time.ToString("N2");
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void Init()
     {
         isTimeoutWarning = false;
-        time = 30.0f;
+        time = 10.0f;
         Time.timeScale = 1.0f;
     }
 
