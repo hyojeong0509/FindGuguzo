@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public bool isHard = false;
     public bool isHardPossible = false;
 
+    public int leftCards = 0;
+
     public Card firstCard = null;
     public Card secondCard = null;
 
