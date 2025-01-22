@@ -14,6 +14,7 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 
+    public Animator anim;
     // Update is called once per frame
     public void Setting(int number, int backNumber)
     {
@@ -28,8 +29,9 @@ public class Card : MonoBehaviour
         Debug.Log("card selected");
         // secondCard에 할당된 정보가 있다면 작동하지 않기
         if (GameManager.Instance.secondCard != null) return;
-        
+
         // 카드의 앞면 보이기
+        anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
         
@@ -58,6 +60,7 @@ public class Card : MonoBehaviour
 
     void CloseCardRaw()
     {
+        anim.SetBool("isOpen", false);
         front.SetActive(false);
         back.SetActive(true);
     }

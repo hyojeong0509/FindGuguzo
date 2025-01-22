@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public Text timeTxt;
 
     float time = 30f;
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -41,8 +41,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        time -= Time.deltaTime;
-        timeTxt.text = time.ToString("N2"); 
+        if (leftCards > 0)
+        {
+            time -= Time.deltaTime;
+            timeTxt.text = time.ToString("N2");
+        }
     }
 
     public void Change_Level()
@@ -67,15 +70,14 @@ public class GameManager : MonoBehaviour
             if (leftCards <= 0)
             {
                 // ��������
-                Time.timeScale = 0.0f;
                 // EndScene ��ȯ
-                SceneManager.LoadScene("EndScene");
-                // ������� Ŭ���� ��, �ϵ��� �ر�
                 if (isHard == false && isHardPossible == false)
                 {
                     // isHardPossible �� ��ȯ
                     isHardPossible = true;
                 }
+                Invoke("NextToEndScene", 1.0f);
+                // �������?Ŭ���� ��, �ϵ��� �ر�
             }
         }
 
@@ -90,5 +92,10 @@ public class GameManager : MonoBehaviour
         // ���� �ʱ�ȭ
         firstCard = null;
         secondCard = null;
+    }
+
+    public void NextToEndScene()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 }
