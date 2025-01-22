@@ -10,7 +10,7 @@ public class EndPanel : MonoBehaviour
     public GameObject EazyPanel;
     public GameObject ImgPanel;
 
-    public void GameOver()
+    void Start()
     {
         // 하드모드를 클리어 하였는지 GameManager에서 isHard를 가져외서 체크
         bool isHardMode = GameManager.Instance.isHard;
@@ -19,12 +19,6 @@ public class EndPanel : MonoBehaviour
         {
             HardPanel.SetActive(true);
             EazyPanel.SetActive(false);
-        }
-        // 하드모드를 클리어 한 경우가 아니라면 그냥 EazyPanel을 보여줌.
-        else
-        {
-            HardPanel.SetActive(false);
-            EazyPanel.SetActive(true);
         }
     }
 
