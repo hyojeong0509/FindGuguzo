@@ -27,15 +27,20 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         SoundManager.instance.PlaySFX("CardFlip");
-        Debug.Log("card selected");
+        // Debug.Log("card selected");
         // secondCard에 할당된 정보가 있다면 작동하지 않기
-        if (GameManager.Instance.secondCard != null) return;
+        if (GameManager.Instance.secondCard != null) 
+        {
+            return;
+        }
 
         // 카드의 앞면 보이기
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
-        
+        // disactive card button
+        // and should re-activate card button on close method
+
         // firstCard에 할당된 정보가 없다면,
         if (GameManager.Instance.firstCard == null)
         {
