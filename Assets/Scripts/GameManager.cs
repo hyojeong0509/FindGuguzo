@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (leftCards > 0)
+        if (leftCards > 0 && timeTxt != null)
         {
             time -= Time.deltaTime;
             timeTxt.text = time.ToString("N2");
