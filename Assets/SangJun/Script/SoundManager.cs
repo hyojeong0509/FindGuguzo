@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -30,6 +31,14 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         PlayBGMWithFadeIn("normalBGM", 4f);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SoundManager.instance.PlaySFX("Click");
+        }
     }
 
     private void Init()

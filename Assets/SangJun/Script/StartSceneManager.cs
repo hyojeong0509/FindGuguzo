@@ -23,13 +23,6 @@ public class StartSceneManager : MonoBehaviour
         Init();
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SoundManager.instance.PlaySFX("BtnClick");
-        }
-    }
 
     private void OnDisable()
     {
