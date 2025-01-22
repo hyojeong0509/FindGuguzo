@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     float time = 30f;
 
     bool isTimeoutWarning = false;
+    bool isFail = false;
 
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (leftCards > 0 && timeTxt != null && time > 0f)
+        if (leftCards > 0 && timeTxt != null && !isFail)
         {
             time -= Time.deltaTime;
             timeTxt.text = time.ToString("N2");
@@ -47,22 +48,23 @@ public class GameManager : MonoBehaviour
         {
             Warning();
         }
-        if(time <= 0f)
+        if(time <= 0f && !isFail)
         {
-            Time.timeScale = 0;
-            time = 1f;
-            timeTxt.text = "0.00";
-            Instantiate(prefabsFailPanel, MainCanvas);
+            isFail = true;
             SoundManager.instance.StopBGMWithFadeOut(2f, 0);
             SoundManager.instance.StopWarningBGM();
             SoundManager.instance.PlaySFX("fail");
+            time = 0f;
+            timeTxt.text = "0.00";
+            Instantiate(prefabsFailPanel, MainCanvas);
         }
     }
 
     public void Init()
     {
+        isFail = false;
         isTimeoutWarning = false;
-        time = 10.0f;
+        time = 30.0f;
         Time.timeScale = 1.0f;
     }
 
