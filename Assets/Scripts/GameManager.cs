@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Card secondCard = null;
 
     public Text timeTxt;
+    public Transform MainCanvas;
+    public GameObject prefabsFailPanel;
 
     float time = 30f;
 
@@ -47,6 +49,11 @@ public class GameManager : MonoBehaviour
         }
         if(time <= 0f)
         {
+            Time.timeScale = 0;
+            time = 1f;
+            timeTxt.text = "0.00";
+            Instantiate(prefabsFailPanel, MainCanvas);
+            SoundManager.instance.StopBGMWithFadeOut(2f, 0);
             SoundManager.instance.StopWarningBGM();
             SoundManager.instance.PlaySFX("fail");
         }
