@@ -1251,6 +1251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3d98af9fee132479482537c039eded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardCount: 0
   isHard: 0
   isHardPossible: 0
 --- !u!4 &935467487

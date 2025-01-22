@@ -4,37 +4,35 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    float grey = 64f / 255f;
+    float grey = 63f / 255f;
 
     public int idx = 0;
+
+    public SpriteRenderer frontImage;
+    public SpriteRenderer backImage;
 
     public GameObject front;
     public GameObject back;
 
-    public SpriteRenderer frontImage;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
+    public void Setting(int number, int backNumber)
     {
-        
+        idx = number;
+        frontImage.sprite = Resources.Load<Sprite>($"Gugu{idx}");
+        backImage.sprite = Resources.Load<Sprite>($"Cat{backNumber}");
     }
 
     // 카드 열기
     public void OpenCard()
     {
+        Debug.Log("card selected");
         // secondCard에 할당된 정보가 있다면 작동하지 않기
-        if (GameManager.Instance.secondCard != null) { return; }
-
+        if (GameManager.Instance.secondCard != null) return;
+        
         // 카드의 앞면 보이기
         front.SetActive(true);
         back.SetActive(false);
-
+        
         // firstCard에 할당된 정보가 없다면,
         if (GameManager.Instance.firstCard == null)
         {
@@ -69,7 +67,7 @@ public class Card : MonoBehaviour
     {
         Invoke("GreyCardRaw", 1.0f);
     }
-    
+
     void GreyCardRaw()
     {
         frontImage.color = new Color(grey, grey, grey, 1.0f);
