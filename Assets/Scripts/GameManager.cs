@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     float time = 30f;
 
+    bool isTimeoutWarning = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -32,13 +34,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // �ߺ��� GameManager ����
         }
     }
-
-    void Start()
-    {
-        time = 30.0f;
-        Time.timeScale = 1.0f;
-    }
-
     void Update()
     {
         if (leftCards > 0 && timeTxt != null)
@@ -46,6 +41,29 @@ public class GameManager : MonoBehaviour
             time -= Time.deltaTime;
             timeTxt.text = time.ToString("N2");
         }
+        if(time <= 10f && !isTimeoutWarning)
+        {
+            Warning();
+        }
+        if(time <= 0f)
+        {
+            SoundManager.instance.StopWarningBGM();
+            SoundManager.instance.PlaySFX("fail");
+        }
+    }
+
+    public void Init()
+    {
+        isTimeoutWarning = false;
+        time = 30.0f;
+        Time.timeScale = 1.0f;
+    }
+
+    void Warning()
+    {
+        isTimeoutWarning = true;
+        SoundManager.instance.StopBGMWithFadeOut(2f, 0.3f);
+        SoundManager.instance.PlayWarningBGMWithFadeIn("timeoutWarning", 1f);
     }
 
     public void Change_Level()
@@ -71,6 +89,11 @@ public class GameManager : MonoBehaviour
             // leftCards == 0�� ��,
             if (leftCards <= 0)
             {
+                // clear sound
+                SoundManager.instance.StopBGMWithFadeOut(4f, 0);
+                SoundManager.instance.StopWarningBGM();
+                SoundManager.instance.PlaySFX("Clear");
+
                 // ��������
                 // EndScene ��ȯ
                 if (isHard == false && isHardPossible == false)

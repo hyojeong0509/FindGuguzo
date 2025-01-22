@@ -26,6 +26,7 @@ public class Card : MonoBehaviour
     // 카드 열기
     public void OpenCard()
     {
+        SoundManager.instance.PlaySFX("CardFlip");
         Debug.Log("card selected");
         // secondCard에 할당된 정보가 있다면 작동하지 않기
         if (GameManager.Instance.secondCard != null) return;

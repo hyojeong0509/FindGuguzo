@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     private Dictionary<string, AudioClip> soundDict;  // SFX와 BGM을 저장할 Dictionary
     [SerializeField] private AudioSource sfxPlayer;                   // SFX 재생용 AudioSource
     [SerializeField] private AudioSource bgmPlayer;                   // BGM 재생용 AudioSource
+    [SerializeField] private AudioSource warningBgmPlayer;                  
 
     [Header("Audio Clips")]
     [SerializeField] private AudioClip[] audioClips; // 오디오 클립 배열
@@ -28,10 +29,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        PlayBGMWithFadeIn("normalBGM", 4f);
-    }
 
     private void Update()
     {
@@ -77,11 +74,8 @@ public class SoundManager : MonoBehaviour
     {
         if (soundDict.TryGetValue(bgmName, out var clip))
         {
-            if (bgmPlayer.clip != clip)
-            {
-                bgmPlayer.clip = clip;
-                bgmPlayer.Play();
-            }
+            bgmPlayer.clip = clip;
+            bgmPlayer.Play();
         }
         else
         {
@@ -92,13 +86,10 @@ public class SoundManager : MonoBehaviour
     {
         if (soundDict.TryGetValue(bgmName, out var clip))
         {
-            if (bgmPlayer.clip != clip)
-            {
-                bgmPlayer.clip = clip;
-                bgmPlayer.volume = 0.05f; // 볼륨을 0으로 설정
-                bgmPlayer.Play();
-                StartCoroutine(FadeInBGM(fadeDuration));
-            }
+            bgmPlayer.clip = clip;
+            bgmPlayer.volume = 0.05f; // 볼륨을 0으로 설정
+            bgmPlayer.Play();
+            StartCoroutine(FadeInBGM(fadeDuration));
         }
         else
         {
@@ -120,6 +111,29 @@ public class SoundManager : MonoBehaviour
 
         bgmPlayer.volume = targetVolume; // 최종 볼륨으로 설정
     }
+    public void StopBGMWithFadeOut(float fadeDuration, float _targetVolume)
+    {
+        if (bgmPlayer.isPlaying)
+        {
+            StartCoroutine(FadeOutBGM(fadeDuration, _targetVolume));
+        }
+    }
+    // 페이드아웃 효과를 구현하는 코루틴
+    private IEnumerator FadeOutBGM(float duration, float _targetVolume)
+    {
+        float targetVolume = bgmPlayer.volume * _targetVolume; // 페이드인의 최종 볼륨 (bgmPlayer 기본 볼륨)
+        float currentVolume = bgmPlayer.volume;
+
+        while (currentVolume > targetVolume)
+        {
+            currentVolume -= Time.deltaTime / duration; // 점진적으로 볼륨 하락
+            bgmPlayer.volume = currentVolume;
+            yield return null;
+        }
+
+        bgmPlayer.volume = targetVolume; // 최종 볼륨으로 설정
+    }
+
     public void AddPlayBGM(string bgmName, float fadeDuration)
     {
         if (soundDict.TryGetValue(bgmName, out var clip))
@@ -135,6 +149,47 @@ public class SoundManager : MonoBehaviour
         else
         {
             Debug.LogWarning("BGM not found.");
+        }
+    }
+
+
+
+    //
+    // 페이드인 효과를 구현하는 코루틴 (경고음 전용)
+    public void PlayWarningBGMWithFadeIn(string bgmName, float fadeDuration)
+    {
+        if (soundDict.TryGetValue(bgmName, out var clip))
+        {
+            warningBgmPlayer.clip = clip;
+            warningBgmPlayer.loop = true;
+            warningBgmPlayer.volume = 0.05f; // 볼륨을 0으로 설정
+            warningBgmPlayer.Play();
+            StartCoroutine(FadeInWarningBGM(fadeDuration));
+        }
+        else
+        {
+            Debug.LogWarning("BGM not found.");
+        }
+    }
+    private IEnumerator FadeInWarningBGM(float duration)
+    {
+        float targetVolume = 0.5f; // 페이드인의 최종 볼륨 (bgmPlayer 기본 볼륨)
+        float currentVolume = 0f;
+
+        while (currentVolume < targetVolume)
+        {
+            currentVolume += Time.deltaTime / duration; // 점진적으로 볼륨 증가
+            warningBgmPlayer.volume = currentVolume;
+            yield return null;
+        }
+
+        warningBgmPlayer.volume = targetVolume; // 최종 볼륨으로 설정
+    }
+    public void StopWarningBGM()
+    {
+        if (warningBgmPlayer.isPlaying)
+        {
+            warningBgmPlayer.Stop();
         }
     }
 }
