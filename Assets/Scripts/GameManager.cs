@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,31 +11,91 @@ public class GameManager : MonoBehaviour
     public bool isHard = false;
     public bool isHardPossible = false;
 
+    public int leftCards = 0;
+
+    public Card firstCard = null;
+    public Card secondCard = null;
+
+    public Text timeTxt;
+
+    float time = 30f;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À º¯°æ ½Ã »èÁ¦µÇÁö ¾Êµµ·Ï ¼³Á¤
+            DontDestroyOnLoad(gameObject); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
-            Destroy(gameObject); // Áßº¹µÈ GameManager Á¦°Å
+            Destroy(gameObject); // ï¿½ßºï¿½ï¿½ï¿½ GameManager ï¿½ï¿½ï¿½ï¿½
         }
     }
 
     void Start()
     {
-        
+        time = 30.0f;
+        Time.timeScale = 1.0f;
     }
 
     void Update()
     {
-        
+        if (leftCards > 0)
+        {
+            time -= Time.deltaTime;
+            timeTxt.text = time.ToString("N2");
+        }
     }
 
     public void Change_Level()
     {
         isHard = !isHard;
+    }
+
+    // firstCardï¿½ï¿½ secondCard ï¿½ï¿½ï¿½ï¿½(idx) ï¿½ï¿½ï¿½Ï±ï¿½
+    public void MatchCards()
+    {
+        // idx ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½,
+        if (firstCard.idx == secondCard.idx)
+        {
+            // Ä«ï¿½ï¿½ greyscale ï¿½ï¿½È¯
+            firstCard.GreyCard();
+            secondCard.GreyCard();
+
+            // leftCards ï¿½ï¿½ï¿½ï¿½
+            leftCards -= 2;
+
+            // leftCards == 0ï¿½ï¿½ ï¿½ï¿½,
+            if (leftCards <= 0)
+            {
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                // EndScene ï¿½ï¿½È¯
+                if (isHard == false && isHardPossible == false)
+                {
+                    // isHardPossible ï¿½ï¿½ ï¿½ï¿½È¯
+                    isHardPossible = true;
+                }
+                Invoke("NextToEndScene", 1.0f);
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿?Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½Ïµï¿½ï¿½ï¿½ ï¿½Ø±ï¿½
+            }
+        }
+
+        // idx ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½,
+        else
+        {
+            // Ä«ï¿½ï¿½ ï¿½Ý±ï¿½
+            firstCard.CloseCard();
+            secondCard.CloseCard();
+        }
+
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+        firstCard = null;
+        secondCard = null;
+    }
+
+    public void NextToEndScene()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 }
