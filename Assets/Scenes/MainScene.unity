@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0.00
+  m_Text: 30.00
 --- !u!222 &152090606
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -234,11 +234,12 @@ MonoBehaviour:
   isHard: 0
   isHardPossible: 0
   leftCards: 0
+  board: {fileID: 1895272297}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   timeTxt: {fileID: 152090605}
   MainCanvas: {fileID: 0}
-  prefabsEndPanel: {fileID: 0}
+  prefabsFailPanel: {fileID: 0}
 --- !u!4 &185173392
 Transform:
   m_ObjectHideFlags: 0
@@ -288,8 +289,6 @@ MonoBehaviour:
   hardBG: {fileID: 1228708404}
   easyTimeBox: {fileID: 1347101168}
   hardTimeBox: {fileID: 1026267929}
-  spawnPointsCloud: []
-  prefabsCloud: []
 --- !u!4 &211202541
 Transform:
   m_ObjectHideFlags: 0
@@ -789,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 152090605}
   MainCanvas: {fileID: 1890247651}
+  board: {fileID: 1895272297}
 --- !u!1 &678442608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2747c397e891604e9900c0c3c056fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
+  isDone: 0
   card: {fileID: 3624237481820853293, guid: 5e4993e428f7cd94b820a01bc32ef4b2, type: 3}
 --- !u!4 &1895272299
 Transform:
