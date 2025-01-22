@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public Transform MainCanvas;
     public GameObject prefabsFailPanel;
 
-    float time = 30f;
+    float time = 30f ;
 
     bool isTimeoutWarning = false;
     bool isFail = false;
