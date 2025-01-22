@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
         // idx �����ϸ�,
         if (firstCard.idx == secondCard.idx)
         {
+            SoundManager.instance.PlaySFX("Correct");
+
             // ī�� greyscale ��ȯ
             firstCard.GreyCard();
             secondCard.GreyCard();
@@ -84,6 +86,8 @@ public class GameManager : MonoBehaviour
         // idx �������� ���� ��,
         else
         {
+            SoundManager.instance.PlaySFX("Incorrect");
+
             // ī�� �ݱ�
             firstCard.CloseCard();
             secondCard.CloseCard();
