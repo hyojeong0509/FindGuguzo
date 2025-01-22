@@ -17,10 +17,13 @@ public class GameManager : MonoBehaviour
     public Card secondCard = null;
 
     public Text timeTxt;
+    public Transform MainCanvas;
+    public GameObject prefabsFailPanel;
 
     float time = 30f;
 
     bool isTimeoutWarning = false;
+    bool isFail = false;
 
     private void Awake()
     {
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (leftCards > 0 && timeTxt != null)
+        if (leftCards > 0 && timeTxt != null && !isFail)
         {
             time -= Time.deltaTime;
             timeTxt.text = time.ToString("N2");
@@ -45,15 +48,21 @@ public class GameManager : MonoBehaviour
         {
             Warning();
         }
-        if(time <= 0f)
+        if(time <= 0f && !isFail)
         {
+            isFail = true;
+            SoundManager.instance.StopBGMWithFadeOut(2f, 0);
             SoundManager.instance.StopWarningBGM();
             SoundManager.instance.PlaySFX("fail");
+            time = 0f;
+            timeTxt.text = "0.00";
+            Instantiate(prefabsFailPanel, MainCanvas);
         }
     }
 
     public void Init()
     {
+        isFail = false;
         isTimeoutWarning = false;
         time = 30.0f;
         Time.timeScale = 1.0f;

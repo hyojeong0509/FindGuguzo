@@ -20,12 +20,6 @@ public class EndPanel : MonoBehaviour
             HardPanel.SetActive(true);
             EazyPanel.SetActive(false);
         }
-        // 하드모드를 클리어 한 경우가 아니라면 그냥 EazyPanel을 보여줌.
-        else
-        {
-            HardPanel.SetActive(false);
-            EazyPanel.SetActive(true);
-        }
     }
 
     // 이미지를 클릭했을 때 닫는 버튼

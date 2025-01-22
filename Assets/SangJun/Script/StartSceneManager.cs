@@ -30,7 +30,9 @@ public class StartSceneManager : MonoBehaviour
     }
 
     void Init()
-    {
+    { 
+        Time.timeScale = 1;
+
         SoundManager.instance.PlayBGMWithFadeIn("normalBGM", 4f);
 
         // objDifficultyLevel 이지 난이도 클리어 여부에 따라 ON / OFF 시키기

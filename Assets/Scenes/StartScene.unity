@@ -1385,6 +1385,8 @@ MonoBehaviour:
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   timeTxt: {fileID: 0}
+  MainCanvas: {fileID: 0}
+  prefabsFailPanel: {fileID: 4600552000665369815, guid: b89ccea7b593ba84a9ee9866455416cc, type: 3}
 --- !u!4 &935467487
 Transform:
   m_ObjectHideFlags: 0
