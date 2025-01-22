@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-    public static BackgroundManager InstanceBG;
-
     public GameObject easyBG;
     public GameObject hardBG;
     public GameObject easyTimeBox;
     public GameObject hardTimeBox;
 
-    private void Awake()
+    /*private void Awake()
     {
         if (InstanceBG == null)
         {
@@ -22,7 +20,7 @@ public class BackgroundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 
     // Start is called before the first frame update
     void Start()
