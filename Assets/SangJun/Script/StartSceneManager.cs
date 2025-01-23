@@ -45,15 +45,7 @@ public class StartSceneManager : MonoBehaviour
 
         SoundManager.instance.PlayBGMWithFadeIn("normalBGM", 4f);
 
-        // objDifficultyLevel 이지 난이도 클리어 여부에 따라 ON / OFF 시키기
-        if (GameManager.Instance.isHardPossible)
-        {
-            objDifficultyLevel.SetActive(true);
-        }
-        else
-        {
-            objDifficultyLevel.SetActive(false);
-        }
+        OnOff_objDifficultyLevel();
 
         FisherYatesShuffleUnity(SpawnPointsCloud);
         FisherYatesShuffleUnity(PrefabsCloud);
@@ -79,6 +71,18 @@ public class StartSceneManager : MonoBehaviour
         InvokeRepeating("SpawnCloud", 0f, .5f);
     }
 
+    public void OnOff_objDifficultyLevel()
+    {
+        // objDifficultyLevel 이지 난이도 클리어 여부에 따라 ON / OFF 시키기
+        if (GameManager.Instance.isHardPossible)
+        {
+            objDifficultyLevel.SetActive(true);
+        }
+        else
+        {
+            objDifficultyLevel.SetActive(false);
+        }
+    }
 
     void SpawnCloud()
     {

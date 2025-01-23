@@ -41,7 +41,12 @@ public class SaveLoadManager : MonoBehaviour
         if (PlayerPrefs.HasKey("isHardPossible")) // 키가 존재하는 경우
         {
             // int 값을 bool로 변환
-            GameManager.Instance.isHardPossible = PlayerPrefs.GetInt("isHardPossible") == 1;
+            bool tete = PlayerPrefs.GetInt("isHardPossible") == 1;
+            GameManager.Instance.isHardPossible = tete;
+
+
+            Debug.Log("가져오기  " + tete);
+            startSceneManager.OnOff_objDifficultyLevel();
         }
 
         /*if (PlayerPrefs.HasKey("BGMVolume")) // 키가 존재하는 경우
