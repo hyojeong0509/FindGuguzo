@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3d98af9fee132479482537c039eded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHard: 1
+  isHard: 0
   isHardPossible: 0
   leftCards: 0
   board: {fileID: 0}
@@ -1976,6 +1976,7 @@ MonoBehaviour:
   timeTxt: {fileID: 0}
   MainCanvas: {fileID: 0}
   prefabsFailPanel: {fileID: 4600552000665369815, guid: b89ccea7b593ba84a9ee9866455416cc, type: 3}
+  isFail: 0
 --- !u!4 &935467487
 Transform:
   m_ObjectHideFlags: 0
@@ -3368,8 +3369,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7a1ebe0dd97695744a2ac5ebd290a423, type: 3}
   - {fileID: 8300000, guid: 8ff96416630e072488f341ea2f0f4a5a, type: 3}
   - {fileID: 8300000, guid: ac3e689c1439f8342b582b3297cbf2ef, type: 3}
-  BGMVolume: 0.38
-  SFXVolume: 0.9
 --- !u!4 &1324809952
 Transform:
   m_ObjectHideFlags: 0
