@@ -109,9 +109,13 @@ public class Board : MonoBehaviour
         // move card to the position (pos) at speed of moveSpeed
         while (Vector3.Distance(card.transform.position, pos) > 0.25f)
         {
+            // separate moveSpeed according to game difficulty
+            float modifier = 7.5f;
+            if (GameManager.Instance.isHard) { modifier = 7.5f * 1.25f; } // in Hard mode, card moves 25% faster
+
             // move directly to its position
             Vector3 direction = (pos - new Vector3 (0f,0f,0f)).normalized;
-            card.transform.position += direction * moveSpeed * Time.deltaTime * 7.5f;
+            card.transform.position += direction * moveSpeed * Time.deltaTime * modifier;
             yield return null;
         }
         // locate card at target position (pos)
