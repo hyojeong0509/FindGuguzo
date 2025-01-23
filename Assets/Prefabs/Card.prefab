@@ -238,6 +238,7 @@ MonoBehaviour:
   backImage: {fileID: 8646082252791118219}
   front: {fileID: 1547779032714334916}
   back: {fileID: 8675689167891322747}
+  backBtn: {fileID: 1414342783543956236}
   anim: {fileID: 2919491390811198179}
 --- !u!95 &2919491390811198179
 Animator:

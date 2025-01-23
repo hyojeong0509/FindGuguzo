@@ -13,9 +13,16 @@ public class Card : MonoBehaviour
 
     public GameObject front;
     public GameObject back;
-
+    public GameObject backBtn;
     public Animator anim;
     // Update is called once per frame
+    public void Update()
+    {
+        if(GameManager.Instance.isFail == true)
+        {
+            backBtn.SetActive(false);
+        }
+    }
     public void Setting(int number, int backNumber)
     {
         idx = number;
