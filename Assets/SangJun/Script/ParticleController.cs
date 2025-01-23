@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
+    public static ParticleController instance;
+
     [SerializeField] ParticleSystem particleClick;
 
     [SerializeField] Transform MainCanvas;
@@ -12,7 +14,15 @@ public class ParticleController : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

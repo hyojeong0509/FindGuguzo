@@ -18,6 +18,14 @@ public class StartSceneManager : MonoBehaviour
     float minY = -5f;
     float maxY = 5f;
 
+    [SerializeField] GameObject StartPanel;
+    [SerializeField] GameObject OptionPanel;
+    [SerializeField] Text TextBGMVolume;
+    [SerializeField] Text TextSFXVolume;
+    [SerializeField] Slider SliderBGMVolume;
+    [SerializeField] Slider SliderSFXVolume;
+
+
     void Start()
     {
         Init();
@@ -29,8 +37,10 @@ public class StartSceneManager : MonoBehaviour
         CancelInvoke();
     }
 
+
     void Init()
-    { 
+    {
+
         Time.timeScale = 1;
 
         SoundManager.instance.PlayBGMWithFadeIn("normalBGM", 4f);
@@ -68,6 +78,7 @@ public class StartSceneManager : MonoBehaviour
 
         InvokeRepeating("SpawnCloud", 0f, .5f);
     }
+
 
     void SpawnCloud()
     {
@@ -112,6 +123,19 @@ public class StartSceneManager : MonoBehaviour
             TextDifficultyLevel[0].color = new Color(128f / 255f, 128f / 255f, 128f / 255f, 0.4f);
             TextDifficultyLevel[1].color = Color.white;
         }
+    }
+
+    public void OptionOnOffButton(bool isOpen)
+    {
+        if (isOpen)
+        {
+            OptionPanel.SetActive(true);
+            StartPanel.SetActive(false);
+            return;
+        }
+
+        OptionPanel.SetActive(false);
+        StartPanel.SetActive(true);
     }
 
     /// <summary>
