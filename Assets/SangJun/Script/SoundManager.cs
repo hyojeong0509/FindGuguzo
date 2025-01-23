@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     [Header("Audio Clips")]
     [SerializeField] private AudioClip[] audioClips; // 오디오 클립 배열
 
+
     private void Awake()
     {
         if (instance == null)
@@ -56,10 +57,10 @@ public class SoundManager : MonoBehaviour
     {
         if (soundDict.TryGetValue(soundName, out var clip))
         {
-            sfxPlayer.volume = 0.5f;
+            sfxPlayer.volume = .5f;
             if (soundName == "CardFlip")
             {
-                sfxPlayer.volume = 0.8f;
+                sfxPlayer.volume = .8f;
             }
             sfxPlayer.PlayOneShot(clip);
         }
@@ -87,7 +88,7 @@ public class SoundManager : MonoBehaviour
         if (soundDict.TryGetValue(bgmName, out var clip))
         {
             bgmPlayer.clip = clip;
-            bgmPlayer.volume = 0.05f; // 볼륨을 0으로 설정
+            bgmPlayer.volume = 0.05f; 
             bgmPlayer.Play();
             StartCoroutine(FadeInBGM(fadeDuration));
         }
@@ -121,7 +122,7 @@ public class SoundManager : MonoBehaviour
     // 페이드아웃 효과를 구현하는 코루틴
     private IEnumerator FadeOutBGM(float duration, float _targetVolume)
     {
-        float targetVolume = bgmPlayer.volume * _targetVolume; // 페이드인의 최종 볼륨 (bgmPlayer 기본 볼륨)
+        float targetVolume = (bgmPlayer.volume) * _targetVolume; // 페이드인의 최종 볼륨 (bgmPlayer 기본 볼륨)
         float currentVolume = bgmPlayer.volume;
 
         while (currentVolume > targetVolume)
@@ -141,9 +142,9 @@ public class SoundManager : MonoBehaviour
             if (bgmPlayer.clip != clip)
             {
                 bgmPlayer.clip = clip;
-                bgmPlayer.volume = 0.05f; // 볼륨을 0으로 설정
+              //  bgmPlayer.volume = 0.05f * BGMVolume; // 볼륨을 0으로 설정
                 bgmPlayer.Play();
-                StartCoroutine(FadeInBGM(fadeDuration));
+              //  StartCoroutine(FadeInBGM(fadeDuration));
             }
         }
         else

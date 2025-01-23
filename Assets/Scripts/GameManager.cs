@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public int leftCards = 0;
 
+    public GameObject board;
+
     public Card firstCard = null;
     public Card secondCard = null;
 
@@ -36,11 +38,15 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); // �ߺ��� GameManager ����
         }
+
+        // Application.targetFrameRate = 60; // fix frame rates
     }
     void Update()
     {
-        if (leftCards > 0 && timeTxt != null && !isFail)
+        if (leftCards > 0 && timeTxt != null && !isFail && board != null && board.GetComponent<Board>().isDone)
         {
+            // string isDoneStr = board.GetComponent<Board>().isDone.ToString();
+            // Debug.Log($"{isDoneStr}");
             time -= Time.deltaTime;
             timeTxt.text = time.ToString("N2");
         }
