@@ -1427,9 +1427,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3d98af9fee132479482537c039eded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHard: 0
+  isHard: 1
   isHardPossible: 0
   leftCards: 0
+  board: {fileID: 0}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   timeTxt: {fileID: 0}
