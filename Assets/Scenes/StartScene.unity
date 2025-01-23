@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3d98af9fee132479482537c039eded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHard: 1
+  isHard: 0
   isHardPossible: 0
   leftCards: 0
   board: {fileID: 0}
@@ -1976,6 +1976,7 @@ MonoBehaviour:
   timeTxt: {fileID: 0}
   MainCanvas: {fileID: 0}
   prefabsFailPanel: {fileID: 4600552000665369815, guid: b89ccea7b593ba84a9ee9866455416cc, type: 3}
+  isFail: 0
 --- !u!4 &935467487
 Transform:
   m_ObjectHideFlags: 0
@@ -2462,7 +2463,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 760, y: 1280}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -2478,9 +2479,9 @@ Canvas:
   m_GameObject: {fileID: 1073203342}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1307247702}
+  m_PlaneDistance: 5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3226,8 +3227,8 @@ Camera:
   m_GameObject: {fileID: 1307247700}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3256,7 +3257,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3305,7 +3306,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
+  m_VolumeFrameworkUpdateModeOption: 0
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -3368,8 +3369,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7a1ebe0dd97695744a2ac5ebd290a423, type: 3}
   - {fileID: 8300000, guid: 8ff96416630e072488f341ea2f0f4a5a, type: 3}
   - {fileID: 8300000, guid: ac3e689c1439f8342b582b3297cbf2ef, type: 3}
-  BGMVolume: 0.38
-  SFXVolume: 0.9
 --- !u!4 &1324809952
 Transform:
   m_ObjectHideFlags: 0
@@ -4644,6 +4643,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078945351}
   m_CullTransparentMesh: 1
+--- !u!1 &2115294714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115294716}
+  - component: {fileID: 2115294715}
+  m_Layer: 0
+  m_Name: LetterBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2115294715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115294714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a11f5462d85a640a69ee9a09f5e1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subCam: {fileID: 0}
+  targetWidth: 760
+  targetHeight: 1280
+--- !u!4 &2115294716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115294714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4657,6 +4703,7 @@ SceneRoots:
   - {fileID: 282401568}
   - {fileID: 1567641495}
   - {fileID: 291877369}
+  - {fileID: 2115294716}
   - {fileID: 424685822}
   - {fileID: 1073203346}
   - {fileID: 2015815338}

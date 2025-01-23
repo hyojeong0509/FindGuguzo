@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // �ߺ��� GameManager ����
         }
 
-        // Application.targetFrameRate = 60; // fix frame rates
+        Application.targetFrameRate = 60; // fix frame rates
     }
     void Update()
     {

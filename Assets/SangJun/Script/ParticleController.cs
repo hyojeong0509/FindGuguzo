@@ -34,11 +34,11 @@ public class ParticleController : MonoBehaviour
         // 마우스 클릭 감지
         if (Input.GetMouseButtonDown(0))
         {
-            // 마우스 위치를 월드 좌표로 변환
             Vector3 mousePosition = Input.mousePosition;
-            Vector3 spawnPosition = new Vector3(mousePosition.x, mousePosition.y, 0);
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));
 
-            // 캔버스에 새로운 파티클 생성
+            Vector3 spawnPosition = new Vector3(worldPosition.x, worldPosition.y, -1f);
+
             CreateParticleAtPosition(spawnPosition);
         }
     }
