@@ -67,8 +67,8 @@ public class Board : MonoBehaviour
             {
                 GameObject board = Instantiate(card, this.transform);
 
-                float x = i % 4 * 1.4f-2.2f;
-                float y = i / 4 * 1.4f-4f;
+                float x = i % 4 * 1.4f - 2.05f;
+                float y = i / 4 * 1.4f - 4f;
 
                 board.transform.localScale = new Vector2(1.0f, 1.0f);
                 // board.transform.position = new Vector2(x, y);

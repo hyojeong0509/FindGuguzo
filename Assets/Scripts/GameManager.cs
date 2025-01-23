@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     float time = 30f ;
 
     bool isTimeoutWarning = false;
-    bool isFail = false;
+    public bool isFail = false;
 
     private void Awake()
     {
