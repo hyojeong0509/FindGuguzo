@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤠 FindGuguzo - 카드 짝 맞추기 게임
+# 🤠 TextRPG 
 
 </div>
 
